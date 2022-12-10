@@ -26,31 +26,60 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- todo: Поставить нормальный шрифт -->
     <title>Задание 1 - верстка сайта</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
   <body>
     <div class="wrapper">
+      <!-- !HEADER -->
       <header>
-        <h1>HEADER</h1>
-      </header>
+        <div class="logo">
+          <!-- todo: Сделать лого на CSS -->
+          <div class="logotype"></div>
+          <p>Супермакет сайта для ВИПС</p>
+        </div>
 
-      <aside>
-        <nav class="menu">
+        <nav>
           <ul>
-            <li><a href="#">Задание 1</a></li>
-            <li><a href="#">Задание 2</a></li>
-            <li><a href="#">Задание 3</a></li>
+            <a href="#"><li>Фильмы ужасов</li></a>
+            <a href="#"><li>Рисунок на CSS</li></a>
+            <a href="#"><li>Flexbox</li></a>
+            <a href="#"><li>DOM</li></a>
+            <a href="#"><li>Dragging Objects</li></a>
           </ul>
         </nav>
-      </aside>
+      </header>
 
+      <!-- !MAIN -->
       <main>
-        <h2>MAIN</h2>
+        <div class="movie-container">
+          <img
+            class="movie"
+            src="/img/movies/evil dead.jpg"
+            alt="evil dead movie poster"
+            width="1000"
+            height="550"
+          />
+          <div class="movie__discription">
+            <h2>Evil Dead</h2>
+            <p>
+              Evil Dead is an American horror film franchise created by Sam
+              Raimi consisting of four feature films and a television series.
+              The original trilogy includes The Evil Dead (1981), Evil Dead II
+              (1987), and Army of Darkness (1992), all written and directed by
+              Raimi, produced by Robert G. Tapert, and starring Campbell. The
+              franchise has since expanded into other formats, including video
+              games, comic books, a musical, and a television series.
+            </p>
+          </div>
+        </div>
+
+        <!-- todo: Добавить ещё 3 фильма -->
       </main>
 
-      <footer>
-        <hr />
+      <!-- !FOOTER-->
+      <footer class="text-center">
         <p>Developed & Designed by Muradyan Artur | z3530903 / 00302</p>
         <p><b>2022</b></p>
       </footer>
