@@ -1,0 +1,152 @@
+.yellow_panda {
+  width: 200px;
+  height: 200px;
+  margin: 5em auto;
+  border: 1px solid black;
+  position: relative;
+  background-color: white;
+}
+
+/* уши */
+.ear {
+  position: absolute;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: 000;
+  background: radial-gradient(ellipse closest-side, white 15%, gray 80%);
+}
+.ear_left {
+  left: 35px;
+}
+.ear_right {
+  right: 35px;
+}
+
+/* голова */
+.head {
+  position: relative;
+  top: calc(50% - 80px);
+  left: calc(50% - 80px);
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: rgb(255, 234, 41);
+  border: solid 5px gray;
+}
+.head::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 20px);
+  left: calc(50% - 42.5px);
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse closest-side, white 1%, transparent);
+}
+
+/* "патчи" */
+.patch {
+  z-index: 1;
+  position: absolute;
+  top: 35px;
+  width: 40px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: rgb(90, 80, 80);
+}
+.patch::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+}
+.patch_left {
+  left: 23px;
+  rotate: 30deg;
+}
+.patch_right {
+  right: 23px;
+  rotate: -30deg;
+}
+
+/* глаза */
+.eye {
+  z-index: 2;
+  position: absolute;
+  top: 55px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: rgb(90, 80, 80);
+}
+.eye_left {
+  left: 42px;
+}
+.eye_right {
+  right: 42px;
+}
+
+/* нос */
+.nose {
+  z-index: 2;
+  position: absolute;
+  top: 90px;
+  left: calc(50% - 16px);
+  width: 32px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: black;
+  background: linear-gradient(90deg, transparent, black 50%, transparent);
+}
+
+/* рот */
+.mouth {
+  z-index: 1;
+  position: absolute;
+  top: 90px;
+  width: 20px;
+  height: 45px;
+  border-radius: 80px / 210px;
+}
+.mouth_left {
+  left: calc(50% - 29px);
+  rotate: 55deg;
+  box-shadow: inset -3px 0px rgb(100, 90, 90);
+}
+.mouth_right {
+  right: calc(50% - 29px);
+  rotate: -55deg;
+  box-shadow: inset 3px 0px rgb(100, 90, 90);
+}
+
+/* галстук-бабочка*/
+.bow_tie {
+  position: relative;
+  top: 145px;
+  left: calc(50% - 36px);
+  width: 72px;
+  height: 30px;
+}
+
+.bow_tie::after,
+.bow_tie::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 28px;
+  background: red;
+  border-radius: 100% 100% 0% 100%;
+  transform: rotate(-45deg);
+}
+.bow_tie:after {
+  left: auto;
+  right: 0;
+  border-radius: 100% 100% 100% 0%;
+  transform: rotate(45deg);
+}
