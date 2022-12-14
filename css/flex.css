@@ -10,9 +10,24 @@ body {
   margin-top: 5%;
 }
 
+/*! ПЕРСОНАЖИ */
 .item_prince{
   position: relative;
+
 }
+
+.item_frog {
+  position: inherit;
+  visibility: hidden;
+  align-self: flex-end;
+  height: 100px;
+}
+
+.item_princess {
+  position: relative;
+  visibility: hidden;
+}
+
 /*! ПОЯВЛЕНИЕ ТЕКСТА У ПРИНЦА*/
 .flexbox:hover .item_prince::after {
   content: "Ты кто?";
@@ -25,18 +40,6 @@ body {
   animation: 4s appear forwards;
 }
 
-.item_frog {
-  position: inherit;
-  visibility: hidden;
-  align-self: flex-end;
-  height: 100px;
-}
-
-.item_princess {
-  position: relative;
-  display: none;
-}
-
 /*! ПОЯВЛЕНИЕ ЛЯГУШКИ */
 .flexbox:hover .item_frog {
   visibility: visible;
@@ -45,7 +48,7 @@ body {
 
 /*! ПОЯВЛЕНИЕ ПРИНЦЕССЫ И ЕЁ ТЕКСТА */
 .flexbox:active .item_princess {
-  display: flex;
+  visibility: visible;
 
   animation: 5s princess_animation forwards;
 }
@@ -69,12 +72,23 @@ body {
   display: none;
 }
 
+
+/*! АНИМАЦИИ*/
 @keyframes move_left {
   0% {
     transform: translateX(200px);
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -93,14 +107,5 @@ body {
   }
   100% {
     transform: translateX(-100px) scale(0);
-  }
-}
-
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
