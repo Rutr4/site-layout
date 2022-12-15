@@ -92,13 +92,12 @@ body {
   color: #000;
   font-family: "Radiotechnika";
 }
+
 a {
   color: #fff;
 
   font-family: "Slime";
 }
-
-/*! не изменяется цвет текста при наведении*/
 
 li:hover {
   color: #c3073f;
@@ -215,6 +214,7 @@ hr {
 
 .movie-container {
   display: flex;
+  flex-direction: column;
   gap: 50px;
   padding: 50px;
   align-items: center;
@@ -225,14 +225,6 @@ hr {
   border: 2px solid #1a1a1d;
   box-shadow: 15px 15px 35px rgba(0, 0, 0, 0.25);
   border-radius: 45px;
-}
-.movie__discription h2 {
-  font-size: 50px;
-}
-.movie__discription p {
-  line-height: 50px;
-  margin-top: 3em;
-  font-size: 25px;
 }
 
 .text-center {
@@ -253,4 +245,48 @@ hr {
   src: url(/font/Radiotechnika.otf) format("truetype");
   font-style: normal;
   font-weight: normal;
+}
+
+/* MEDIA */
+
+/* todo: Доделать адаптивность сайта и изображений на главной*/
+
+/* Стили для устройств с маленьким экраном, размерами 768px - 991px (планшеты и подобные) */
+@media (min-width: 768px) {
+}
+/* Стили для ноутбуков и компьютеров с экранами в диапазоне 992px - 1199px */
+@media (min-width: 992px) {
+  .wrapper {
+    margin: auto;
+    width: 50%;
+  }
+  header {
+    font-size: 10px;
+  }
+
+  .movie__discription h2 {
+    font-size: 30px;
+  }
+  .movie__discription p {
+    margin-top: 2em;
+    font-size: 50px;
+    line-height: 20px;
+    font-size: 10px;
+  }
+  h2 {
+    text-align: center;
+  }
+}
+/* Стили для устройств с большой шириной экрана >1281px */
+@media (min-width: 1281px) {
+  .wrapper {
+    margin: auto;
+    width: 75%;
+  }
+  header {
+    font-size: 20px;
+  }
+  h2 {
+    text-align: center;
+  }
 }
