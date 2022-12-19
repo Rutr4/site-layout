@@ -1,19 +1,16 @@
-body {
-  font-family: Verdana, Helvetica, Arial, sans-serif;
-  font-weight: 800;
-}
-
 .flexbox {
   position: relative;
   display: flex;
   justify-content: center;
   margin-top: 5%;
+
+  font-family: Verdana, Helvetica, Arial, sans-serif;
+  font-weight: 800;
 }
 
 /*! ПЕРСОНАЖИ */
-.item_prince{
+.item_prince {
   position: relative;
-
 }
 
 .item_frog {
@@ -60,18 +57,17 @@ body {
   position: absolute;
   top: 0;
   left: 100px;
-  
+
   animation: 2s appear forwards;
   animation-delay: 1s;
 }
 
-.flexbox:active .item_frog  {
+.flexbox:active .item_frog {
   visibility: hidden;
 }
-.flexbox:active .item_prince::after  {
+.flexbox:active .item_prince::after {
   display: none;
 }
-
 
 /*! АНИМАЦИИ*/
 @keyframes move_left {
@@ -96,10 +92,10 @@ body {
   0% {
     transform: translateX(-100px) scale(0);
   }
-  20%{
+  20% {
     transform: translateX(-100px) scale(1);
   }
-  80%{
+  80% {
     transform: translateX(-100px) scale(1);
   }
   97% {

@@ -1,0 +1,27 @@
+.class1 {
+  background-color: #c3073f;
+}
+.class2 {
+  background-color: #6f2232;
+}
+
+.topic {
+  font-size: 2em;
+  letter-spacing: 0.5em;
+  margin: 15px;
+}
+
+.button {
+  font-size: medium;
+  padding: 10px;
+  box-shadow: 3px 3px 3px black;
+  transition: box-shadow, color, 0.5s;
+}
+.button:hover {
+  color: #c3073f;
+  box-shadow: 3px 3px 3px #c3073f;
+}
+.button:active {
+  color: #ff004c;
+  box-shadow: 3px 5px 5px #ff004c;
+}
