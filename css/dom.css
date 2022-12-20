@@ -4,7 +4,11 @@
 .class2 {
   background-color: #6f2232;
 }
-
+p {
+  padding: 10px;
+  border: 1px solid black;
+  margin: 0 10%;
+}
 .topic {
   font-size: 2em;
   letter-spacing: 0.5em;
@@ -16,6 +20,7 @@
   padding: 10px;
   box-shadow: 3px 3px 3px black;
   transition: box-shadow, color, 0.5s;
+  margin-bottom: 25px;
 }
 .button:hover {
   color: #c3073f;
