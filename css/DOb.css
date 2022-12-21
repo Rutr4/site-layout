@@ -8,16 +8,24 @@
 }
 .chimera_goat {
   position: absolute;
-  bottom: 150px;
-  right: 500px;
+  bottom: 15%;
+  right: 20%;
 }
 .chimera_lion {
   position: absolute;
-  top: 300px;
-  left: 400px;
+  top: 10%;
+  left: 5%;
 }
 .chimera_snake {
   position: absolute;
   left: 50%;
-  top: 25px;
+  top: 10%;
+}
+
+.draggable {
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
 }
