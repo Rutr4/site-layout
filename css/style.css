@@ -1,3 +1,12 @@
+/* FONTS */
+
+@font-face {
+  font-family: Radiotechnika; /* Гарнитура шрифта */
+  src: url("assets/font/Radiotechnika.otf"); /* Путь к файлу со шрифтом */
+}
+@font-face {
+}
+
 /* Обнуление CSS */
 * {
   padding: 0;
@@ -22,8 +31,7 @@ a:active {
 
 nav,
 footer,
-header,
-aside {
+header {
   display: block;
 }
 
@@ -95,8 +103,6 @@ body {
 
 a {
   color: #fff;
-
-  font-family: "Slime";
 }
 
 li:hover {
@@ -178,15 +184,13 @@ nav a li {
 
 /* MAIN */
 main {
-  flex-grow: 1;
   background-color: #383838;
+  flex-grow: 1;
 }
 
 /* FOOTER */
 footer {
   color: #fff;
-  font-family: "Radiotechnika";
-
   position: relative;
   background-color: #1a1a1d;
   height: 250px;
@@ -235,22 +239,6 @@ hr {
 
 .text-center {
   text-align: center;
-}
-
-/* FONT */
-
-@font-face {
-  font-family: "Slime";
-  src: url("/font/Lethal\ Slime.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "Radiotechnika";
-  src: url(/font/Radiotechnika.otf) format("truetype");
-  font-style: normal;
-  font-weight: normal;
 }
 
 /* MEDIA */
