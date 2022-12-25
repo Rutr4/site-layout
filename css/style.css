@@ -2,9 +2,13 @@
 
 @font-face {
   font-family: Radiotechnika; /* Гарнитура шрифта */
-  src: url("assets/font/Radiotechnika.otf"); /* Путь к файлу со шрифтом */
+  src: url("../assets/fonts/Radiotechnika.otf"); /* Путь к файлу со шрифтом */
 }
 @font-face {
+  font-family: Slime;
+  src: url("../assets/fonts/Lethal_slime.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
 }
 
 /* Обнуление CSS */
@@ -120,6 +124,7 @@ a:hover {
 
 /* HEADER */
 header {
+  font-family: Slime;
   background-color: #1a1a1d;
   height: 220px;
 }
