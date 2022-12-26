@@ -7,10 +7,23 @@
   display: none;
 }
 
-.chimera__part {
-  position: absolute;
+.puzzle-workspace {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
-.js-drag-elem {
+.chimera__part {
+  position: absolute;
+  user-select: none;
+}
+
+.chimera__part img {
+  user-select: none;
+}
+
+.chimera__part_state_captured {
   cursor: grab;
 }
+
