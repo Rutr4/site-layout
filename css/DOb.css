@@ -22,10 +22,23 @@
   top: 10%;
 }
 
-.draggable {
+.js-drag-elem {
   cursor: grab;
 }
 
-.hide {
-  display: none;
+.element {
+  width: 100px;
+  height: 100px;
+  border: 1px solid red;
+}
+
+.panel {
+  width: 300px;
+  height: 300px;
+  border: 3px solid blue;
+}
+.region {
+  width: 400px;
+  height: 400px;
+  border: 3px solid green;
 }
