@@ -6,39 +6,11 @@
 .chimera {
   display: none;
 }
-.chimera_goat {
+
+.chimera__part {
   position: absolute;
-  bottom: 15%;
-  right: 20%;
-}
-.chimera_lion {
-  position: absolute;
-  top: 10%;
-  left: 5%;
-}
-.chimera_snake {
-  position: absolute;
-  left: 50%;
-  top: 10%;
 }
 
 .js-drag-elem {
   cursor: grab;
-}
-
-.element {
-  width: 100px;
-  height: 100px;
-  border: 1px solid red;
-}
-
-.panel {
-  width: 300px;
-  height: 300px;
-  border: 3px solid blue;
-}
-.region {
-  width: 400px;
-  height: 400px;
-  border: 3px solid green;
 }

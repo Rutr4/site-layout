@@ -1,32 +1,58 @@
-let elems = document.querySelectorAll(".element");
-let region = document.querySelector(".region");
+const imgParts = [
+  {
+    x: 10,
+    y: 10,
+    angle: 0,
+    imgSrc: "assets/img/drag_obj/Chimera_goat.png",
+    alt: "Химера - изображение головы козы",
+  },
+  {
+    x: 50,
+    y: 50,
+    angle: 20,
+    imgSrc: "assets/img/drag_obj/Chimera_lion.png",
+    alt: "Химера - изображение тела льва",
+  },
+];
 
-let offsetX;
-let offsetY;
+const region = document.querySelector(".region");
 
-elems.forEach(function (elem, index) {
-  elem.addEventListener("dragstart", function (event) {
-    console.log(event.offsetX, event.offsetY);
+function generatePartElement(partInfo) {
+  const imgContainer = document.createElement("div");
+  const img = document.createElement("img");
+  imgContainer.classList.add("chimera_goat", "chimera__part");
+  // imgContainer.style.transform = `rotate(${partInfo.angle}deg)`;
+  img.src = partInfo.imgSrc;
+  img.alt = partInfo.alt;
+  imgContainer.appendChild(img);
+  imgContainer.addEventListener("pointerup", handleMouseDown);
+  return imgContainer;
+}
 
-    elem.style.position = "absolute";
-    offsetX = event.offsetX;
-    offsetY = event.offsetY;
-
-    event.dataTransfer.setData("img", index);
+function init() {
+  imgParts.forEach((imgPart) => {
+    region.appendChild(generatePartElement(imgPart));
   });
+}
 
-  elem.addEventListener("dragend", function (event) {
-    console.log(event.pageX, event.pageY);
+function handleMouseDown(e) {
+  console.log(e);
+  const element = e.target;
+  const x = element.x;
+  const y = element.y;
 
+  function handlePointerMove(e) {
+    const mouseX = e.x;
+    const mouseY = e.y;
+
+    element.style.left = "";
     elem.style.top = event.pageY - offsetY + "px";
-    elem.style.left = event.pageX - offsetX + "px";
-  });
-});
+    //     elem.style.left = event.pageX - offsetX + "px";
+  }
 
-region.addEventListener("dragover", function (event) {
-  event.preventDefault();
-});
+  document.addEventListener("pointermove", handlePointerMove);
 
-region.addEventListener("drop", function (event) {
-  this.appendChild(elems[event.dataTransfer.getData("img")]);
-});
+  document.removeEventListener("pointerdown");
+}
+
+init();
