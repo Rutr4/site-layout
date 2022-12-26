@@ -23,7 +23,7 @@
 }
 
 .draggable {
-  cursor: pointer;
+  cursor: grab;
 }
 
 .hide {
