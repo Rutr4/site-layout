@@ -27,3 +27,18 @@
   cursor: grab;
 }
 
+.js-btn-test {
+  position: absolute;
+  bottom: 0;
+  height: 25px;
+  width: 100%;
+  transition: box-shadow, color, 0.5s;
+}
+.js-btn-test:hover {
+  color: #c3073f;
+  box-shadow: 0 -5px 10px #c3073f;
+}
+.js-btn-test:active {
+  color: #6f2232;
+  box-shadow: 0 -15px 25px #6f2232;
+}

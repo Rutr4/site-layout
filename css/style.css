@@ -198,12 +198,12 @@ footer {
   color: #fff;
   position: relative;
   background-color: #1a1a1d;
-  height: 250px;
+  height: 150px;
   font-size: 20px;
 }
 footer p {
-  margin-top: 3em;
-  margin-bottom: 3em;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 footer img {
