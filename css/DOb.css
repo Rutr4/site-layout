@@ -17,6 +17,7 @@
 .chimera__part {
   position: absolute;
   user-select: none;
+  border: 3px solid rgb(64, 255, 0);
 }
 
 .chimera__part img {
