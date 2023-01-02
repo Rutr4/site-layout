@@ -176,8 +176,7 @@ function check() {
   }
 }
 
-win();
-// TODO что делать при выигрыше
+// убираем элементы, добавляем целое изображение, анимируем его
 function win() {
   parts.forEach((part) => {
     part.remove();
@@ -188,9 +187,33 @@ function win() {
   chimera[0].classList.add = "display";
   chimera[0].style.display = "block";
   chimera[0].style.position = "relative";
+  chimera[0].animate(
+    [
+      { transform: "rotate(" + 180 + "deg)" },
+      { transform: "scale(0.5)" },
+      { transform: "rotate(" + -180 + "deg)" },
+      { transform: "scale(0.7)" },
+      { transform: "rotate(" + 360 + "deg)" },
+      { transform: "scale(0.1)" },
+      { transform: "rotate(" + 0 + "deg)" },
+      { transform: "scale(1)" },
+    ],
+    3000
+  );
 
   const newParagraph = document.createElement("p");
 
   newParagraph.innerHTML = `<b>У вас получилось ! поздравляю !<b>`; //выбор цвета фона, чётные - class1, нечётные - class2
   workspace.append(newParagraph);
+}
+function winAnimation() {
+  animate({
+    duration: 1000,
+    timing: function (timeFraction) {
+      return timeFraction;
+    },
+    draw: function (progress) {
+      elem.style.width = progress * 100 + "%";
+    },
+  });
 }
