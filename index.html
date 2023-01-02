@@ -1,25 +1,3 @@
-<!-- 
-    Задание.
-
--Сайт должен иметь физическую и логическую структуру.
--Продумать общий дизайн сайта.
--Сайт выполнен в одном стиле.
--Сайт может быть выполнен по любой технологии верстки, кроме табличной.
--Обязательные части страницы сайта: шапка(header), footer, часть контента, меню.
--Продумать решение для каждой части макета. В дальнейшем на сайте будут размещены задания и проекты.
--Макетирование сайта можно делать в любом редакторе. Обратите внимание на Figma, Axure, интересные вещи. Можете сначала отрисовать макет, потом собрать самим или ы редакторе или наложить на готовый шаблон.
--Сделать свой логотип размером 100х100рх при стандартном размере экрана (должен быть выполнен средствами css).
-
-    Уточнение требований
--Сайт выложен на реальный хостинг.
--У сайта должна быть любая, но адаптивная верстка.
--Проверять будем на разных устройствах.
--Свой логотип обязательно.
--Сайт должен иметь свое содержание и должен быть соответственно оформлен.
--Все задания должны быть видны на сайте.
--Все ссылки должны работать и быть информативными.
--->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,12 +41,11 @@
     </header>
 
     <!-- !MAIN -->
-    <main id="content">
+    <main id="content-wrapper">
       <div class="movie-container">
-        <img class="movie" src="assets/img/movies/evil dead.jpg" alt="evil dead movie poster" width="1000"
-          height="550" />
+        <img class="movie" src="assets/img/movies/evil dead.jpg" alt="evil dead movie poster" width="100%" />
         <div class="movie-discription">
-          <h2>Evil Dead</h2>
+          <h2><a href="https://en.wikipedia.org/wiki/The_Evil_Dead" target="_blank">Evil Dead</a></h2>
           <p>
             Evil Dead is an American horror film franchise created by Sam
             Raimi consisting of four feature films and a television series.
@@ -81,13 +58,10 @@
         </div>
       </div>
 
-      <hr />
-
       <div class="movie-container">
-        <img class="movie" src="assets/img/movies/hellraiser.jpg" alt="evil dead movie poster" width="1000"
-          height="550" />
+        <img class="movie" src="assets/img/movies/hellraiser.jpg" alt="hellraiser movie poster" width="100%" />
         <div class="movie-discription">
-          <h2>Hellraiser 1987</h2>
+          <h2><a href="https://en.wikipedia.org/wiki/Hellraiser" target="_blank">Hellraiser</a></h2>
           <p>
             Hellraiser is a 1987 British supernatural horror film written and
             directed by Clive Barker, and produced by Christopher Figg, based
@@ -100,13 +74,10 @@
           </p>
         </div>
       </div>
-
-      <hr />
-
       <div class="movie-container">
-        <img class="movie" src="assets/img/movies/us.jpg" alt="evil dead movie poster" width="1000" height="550" />
+        <img class="movie" src="assets/img/movies/us.jpg" alt="us movie poster" width="100%" />
         <div class="movie-discription">
-          <h2>US 2019</h2>
+          <h2><a href="https://en.wikipedia.org/wiki/Us_(2019_film)" target="_blank">us</a></h2>
           <p>
             Us is a 2019 American psychological horror film written and
             directed by Jordan Peele, starring Lupita Nyong'o, Winston Duke,
@@ -119,12 +90,10 @@
         </div>
       </div>
 
-      <hr />
-
       <div class="movie-container">
-        <img class="movie" src="assets/img/movies/it.jpg" alt="evil dead movie poster" width="1000" height="550" />
+        <img class="movie" src="assets/img/movies/it.jpg" alt="it movie poster" width="100%" />
         <div class="movie-discription">
-          <h2>IT 2017</h2>
+          <h2><a href="https://en.wikipedia.org/wiki/It_(2017_film)" target="_blank">it</a></h2>
           <p>
             It (titled onscreen as It Chapter One) is a 2017 American
             supernatural horror film directed by Andy Muschietti and written
@@ -140,12 +109,12 @@
 
     <!-- !FOOTER-->
     <footer>
-      <img src="assets/img/png/scream.png" alt="woman screaming" height="150" width="200" />
       <div class="text-center">
         <p>Developed & Designed by Muradyan Artur | z3530903 / 00302</p>
         <p><b>2022</b></p>
       </div>
     </footer>
+
   </div>
 </body>
 

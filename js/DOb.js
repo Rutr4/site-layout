@@ -6,14 +6,14 @@ const imgParts = [
   {
     top: 60,
     left: 450,
-    angle: 0, //!90
+    angle: 90,
     imgSrc: "assets/img/drag_obj/goat.png",
     alt: "Химера - козья голова",
   },
   {
-    top: 180,
-    left: 900,
-    angle: 0, //!180
+    top: 80,
+    left: 700,
+    angle: 180,
     imgSrc: "assets/img/drag_obj/lion.png",
     alt: "Химера - тело льва",
   },
@@ -25,8 +25,8 @@ const imgParts = [
     alt: "Химера - львиные ноги химеры",
   },
   {
-    top: 350,
-    left: 700,
+    top: 150,
+    left: 400,
     angle: 0,
     imgSrc: "assets/img/drag_obj/snake.png",
     alt: "Химера - хвост змеи",
