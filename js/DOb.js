@@ -1,36 +1,51 @@
 const workspace = document.querySelector(".puzzle-workspace");
-const testBtn = document.getElementsByClassName("js-btn-test");
+const testBtn = document.querySelector(".js-btn-test");
+
 // информация об изображениях
-//todo добавить 4ый элемент и изменить изображения
 const imgParts = [
   {
     top: 60,
-    left: 350,
-    angle: 90,
-    imgSrc: "assets/img/drag_obj/Chimera_goat.png",
-    alt: "Химера - изображение головы козы",
+    left: 450,
+    angle: 0, //!90
+    imgSrc: "assets/img/drag_obj/goat.png",
+    alt: "Химера - козья голова",
   },
   {
-    top: 10,
-    left: 850,
-    angle: 0,
-    imgSrc: "assets/img/drag_obj/Chimera_lion.png",
-    alt: "Химера - изображение тела льва",
+    top: 180,
+    left: 900,
+    angle: 0, //!180
+    imgSrc: "assets/img/drag_obj/lion.png",
+    alt: "Химера - тело льва",
   },
   {
     top: 150,
     left: 50,
     angle: 0,
-    imgSrc: "assets/img/drag_obj/Chimera_snake.png",
-    alt: "Химера - изображение хвоста змеи",
+    imgSrc: "assets/img/drag_obj/legs.png",
+    alt: "Химера - львиные ноги химеры",
+  },
+  {
+    top: 350,
+    left: 700,
+    angle: 0,
+    imgSrc: "assets/img/drag_obj/snake.png",
+    alt: "Химера - хвост змеи",
+  },
+  {
+    top: 50,
+    left: 50,
+    angle: 0,
+    imgSrc: "assets/img/drag_obj/chimera-full.png",
+    alt: "Химера",
   },
 ];
+
 // добавление элементов на страницу
 init();
 function init() {
-  imgParts.forEach((imgPart) => {
-    workspace.appendChild(generatePartElement(imgPart));
-  });
+  for (let i = 0; i < 4; i++) {
+    workspace.appendChild(generatePartElement(imgParts[i]));
+  }
 }
 function generatePartElement(partInfo) {
   const imgContainer = document.createElement("div");
@@ -51,6 +66,7 @@ function generatePartElement(partInfo) {
 }
 const parts = document.querySelectorAll(".chimera__part");
 
+// перемещение элементов
 const handleImgPartCaptured = (e, workspace = document.body) => {
   const element = e.currentTarget;
   if (element === null) return;
@@ -114,8 +130,67 @@ parts.forEach((element) => {
     angle = angle.replace(/[^\d.]/g, "");
     angle = parseInt(angle);
     element.style.transform = `rotate(${angle + 90}deg)`;
-    console.log(element.style.transform);
   };
 });
-// TODO реализовать тест сбора изображения
+
+// проверка сборки изображения
+testBtn.addEventListener("click", check);
+
+function check() {
+  let result = 0;
+
+  // проверка углов поворота элементов
+  parts.forEach((part) => {
+    let angle = part.style.transform.replace(/[^\d.]/g, "");
+    if (angle % 360 === 0 || angle === 0) {
+      result++;
+    }
+  });
+
+  // проверка относительного расположение элементов
+  let goat = parts[0].getBoundingClientRect();
+  let lion = parts[1].getBoundingClientRect();
+  let legs = parts[2].getBoundingClientRect();
+  let snake = parts[3].getBoundingClientRect();
+
+  compareCoords(goat.bottom - lion.top, 5, 25);
+  compareCoords(goat.left - lion.left, -10, 10);
+  compareCoords(snake.bottom - legs.top, -5, 25);
+  compareCoords(snake.right - legs.right, -20, 5);
+  compareCoords(lion.right - legs.left, 20, 40);
+  compareCoords(lion.top - legs.top, -25, 5);
+
+  if (result === 10) {
+    console.log(result);
+    win();
+  } else {
+    console.log(result);
+  }
+
+  function compareCoords(coordDiff, min, max) {
+    if (coordDiff >= min && coordDiff <= max) {
+      result += 1;
+      console.log(result);
+    }
+    return;
+  }
+}
+
+win();
 // TODO что делать при выигрыше
+function win() {
+  parts.forEach((part) => {
+    part.remove();
+  });
+  workspace.appendChild(generatePartElement(imgParts[4]));
+
+  const chimera = document.getElementsByClassName("chimera__part");
+  chimera[0].classList.add = "display";
+  chimera[0].style.display = "block";
+  chimera[0].style.position = "relative";
+
+  const newParagraph = document.createElement("p");
+
+  newParagraph.innerHTML = `<b>У вас получилось ! поздравляю !<b>`; //выбор цвета фона, чётные - class1, нечётные - class2
+  workspace.append(newParagraph);
+}
