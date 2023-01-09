@@ -90,7 +90,6 @@ h6 {
   font-size: inherit;
   font-weight: 400;
 }
-/*Обнуление закончилось :) */
 
 /*Wrapper для правильного заданного отображения блоков на странице */
 .wrapper {
@@ -192,54 +191,24 @@ main {
   background-color: #383838;
   flex-grow: 1;
 }
+#content-wrapper {
+  display: flex;
+}
+h2 {
+  text-align: center;
+}
 
 /* FOOTER */
 footer {
   color: #fff;
   position: relative;
   background-color: #1a1a1d;
-  height: 250px;
+  height: 150px;
   font-size: 20px;
 }
 footer p {
-  margin-top: 3em;
-  margin-bottom: 3em;
-}
-
-footer img {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-}
-
-/* OTHER */
-hr {
-  border-top: 3px double #6f2232;
-  color: #6f2232;
-}
-
-.movie-container {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  padding: 50px;
-  align-items: center;
-}
-.movie {
-  flex-shrink: 0;
-  flex-grow: 0;
-  border: 2px solid #1a1a1d;
-  box-shadow: 15px 15px 35px rgba(0, 0, 0, 0.25);
-  border-radius: 45px;
-}
-.movie-discription {
-  font-size: 1.5em;
-  line-height: 1.5em;
-}
-.movie-discription h2 {
-  letter-spacing: 0.5em;
-  font-size: 2em;
-  margin-bottom: 1em;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .text-center {
@@ -248,40 +217,103 @@ hr {
 
 /* MEDIA */
 
-/* todo: Доделать адаптивность сайта и изображений на главной*/
-
 /* Стили для устройств с маленьким экраном, размерами 768px - 991px (планшеты и подобные) */
-@media (min-width: 768px) {
-}
-/* Стили для ноутбуков и компьютеров с экранами в диапазоне 992px - 1199px */
-@media (min-width: 992px) {
+@media (max-width: 1280px) {
   .wrapper {
     margin: auto;
-    width: 50%;
+    width: 80%;
   }
-  .movie__discription h2 {
-    font-size: 30px;
+  #content {
+    flex-shrink: 1;
+    flex-grow: 1;
+    height: 100%;
   }
-  .movie__discription p {
-    margin-top: 2em;
-    font-size: 50px;
-    line-height: 20px;
-    font-size: 10px;
+  #content-wrapper {
+    flex-direction: column;
+    flex-wrap: nowrap;
   }
-  h2 {
-    text-align: center;
+  header {
+    height: 100%;
+  }
+  nav {
+    height: 100%;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: column;
+  }
+  nav a {
+    height: 50px;
+    border: 1px solid #000;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+  nav a li {
+    align-self: center;
+  }
+  .movie-container {
+    width: 100%;
+    border: 1px solid #6f2232;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 15px;
+  }
+  .movie {
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 2px solid #1a1a1d;
+    box-shadow: 15px 15px 35px rgba(0, 0, 0, 0.25);
+    border-radius: 45px;
+  }
+  .movie-discription {
+    font-size: 1.5em;
+    line-height: 1.5em;
+  }
+  .movie-discription h2 {
+    letter-spacing: 0.1em;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    margin: 20px;
   }
 }
 /* Стили для устройств с большой шириной экрана >1281px */
 @media (min-width: 1281px) {
   .wrapper {
     margin: auto;
-    width: 75%;
+    width: 80%;
+  }
+  #content-wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
   header {
     font-size: 20px;
   }
-  h2 {
-    text-align: center;
+  .movie-container {
+    width: 50%;
+    border: 1px solid #6f2232;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 15px;
+  }
+  .movie {
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 2px solid #1a1a1d;
+    box-shadow: 15px 15px 35px rgba(0, 0, 0, 0.25);
+    border-radius: 45px;
+  }
+  .movie-discription {
+    font-size: 1.5em;
+    line-height: 1.5em;
+  }
+  .movie-discription h2 {
+    letter-spacing: 0.1em;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    margin: 20px;
   }
 }

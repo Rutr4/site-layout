@@ -4,13 +4,52 @@
   height: 100%;
 }
 .chimera {
-  display: none;
+  margin: 0 auto;
+}
+
+.puzzle-workspace {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: baseline;
+}
+
+.puzzle-workspace p {
+  font-size: larger;
+  color: #c3073f;
+  margin: 80px;
 }
 
 .chimera__part {
   position: absolute;
+  user-select: none;
+  /*border: 1px solid rgb(64, 255, 0);*/
 }
 
-.js-drag-elem {
+.chimera__part img {
+  user-select: none;
+}
+
+.chimera__part_state_captured {
   cursor: grab;
+}
+
+.js-btn-test {
+  position: absolute;
+  bottom: 0;
+  height: 25px;
+  width: 100%;
+  transition: box-shadow, color, 0.5s;
+}
+.js-btn-test:hover {
+  color: #c3073f;
+  box-shadow: 0 -5px 10px #c3073f;
+}
+.js-btn-test:active {
+  color: #6f2232;
+  box-shadow: 0 -15px 25px #6f2232;
 }
